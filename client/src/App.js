@@ -38,6 +38,7 @@ import AppointmentBooking from './components/AppointmentBooking'; // Import Appo
 // import AsthmaForm from './components/forms/AsthmaForm'; // Add other disease forms as needed
 import './App.css';
 
+
 function App() {
   return (
     <Router>
@@ -52,6 +53,7 @@ function App() {
         
         {/* Maps Route */}
         <Route path="/maps" element={<Maps />} />
+        
         
         {/* Hypertension Form Route */}
         <Route path="/forms/HypertensionForm" element={<HypertensionForm />} />

@@ -146,3 +146,9 @@ button:hover {
   transform: translateY(-10px);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
+
+/* Add this to App.css */
+.leaflet-container {
+  height: 80vh; /* Adjust height as needed */
+  width: 100%;
+}
