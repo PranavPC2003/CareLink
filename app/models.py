@@ -2,6 +2,7 @@ from django.db import models
 from datetime import datetime
 from django.contrib.auth.models import User
 from ckeditor_uploader.fields import RichTextUploadingField
+import bcrypt
 
 
 class Patient(models.Model):
@@ -40,7 +41,15 @@ class Doctor(models.Model):
             return '{} {}.{}'.format(self.last_name.title(), self.first_name[0].upper(), middle_initial)
         else:
             return '{} {}.'.format(self.last_name.title(), self.first_name[0].upper())
+        
+class DoctorLogin(models.Model):
+    doctor = models.OneToOneField(Doctor, on_delete=models.CASCADE)
+    email = models.EmailField(max_length=100, unique=True)
+    password = models.CharField(max_length=60)
 
+    def __str__(self):
+        return '{} {}'.format(self.doctor.doctor_id, self.email)
+        
 class Appointment(models.Model):
     class Meta:
         unique_together = ('doctor', 'date', 'timeslot')

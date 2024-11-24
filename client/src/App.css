@@ -1,38 +1,148 @@
-.App {
-  text-align: center;
+/* General Styles */
+.navbar {
+  margin-bottom: 20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Page Container */
+.page-container {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+/* Search Container */
+.search-container {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  margin: 20px 0;
+  width: 100%;
+  max-width: 800px;
+}
+
+.search-input {
+  padding: 10px;
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+/* Hospital List */
+.hospital-list {
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.hospital-item {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  transition: transform 0.2s ease;
+}
+
+.hospital-item:hover {
+  transform: scale(1.05);
+}
+
+.hospital-item img {
+  border-radius: 8px;
+  width: 100px;
+  height: auto;
+}
+
+.hospital-description {
+  margin-top: 10px;
+}
+
+.hospital-location, .hospital-category {
+  font-style: italic;
+}
+
+/* Hypertension Form */
+.form-container {
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 15px;
+}
+
+textarea, input[type="text"], input[type="number"], select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+button {
+  padding: 10px;
+  background-color: #007bff;
+  border: none;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Ensure dropdown toggles behave like links */
+.navbar-nav .nav-link {
+  color: white !important;
+  transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #007bff !important;
+}
+
+/* Make the dropdown menu dark to match navbar */
+.dropdown-menu-dark {
+  background-color: #343a40 !important;
+}
+
+.navbar-nav .nav-item:hover .dropdown-menu {
+  display: block;
+}
+
+/* Dropdown Item hover effect */
+.dropdown-item:hover {
+  background-color: #007bff;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/* Optional: to remove the outline/box on buttons for 'Hypertension Form' */
+.navbar-nav .nav-link:hover {
+  background-color: transparent;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Styles for cards */
+.service-card,
+.testimonial-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover,
+.testimonial-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
