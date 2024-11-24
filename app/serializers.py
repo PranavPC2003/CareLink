@@ -5,13 +5,12 @@ import bcrypt
 class HospitalSerializer(serializers.ModelSerializer):
     class Meta:
         model = Hospital
-        fields = ['hospital_id', 'name', 'description','location', 'category', 'logo'] 
+        fields = ['hospital_id', 'name', 'description','location', 'category', 'logo', 'latitude', 'longitude'] 
 
 class AppointmentSerializer(serializers.ModelSerializer):
     class Meta:
         model = Appointment
         fields = ['doctor', 'date', 'timeslot', 'patient_name']
-        
 class DoctorSignupSerializer(serializers.ModelSerializer):
     password = serializers.CharField(write_only=True)
 

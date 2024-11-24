@@ -32,10 +32,7 @@ import HospitalList from './components/HospitalList';
 import LandingPage from './components/LandingPage';
 import Maps from './components/Maps';
 import HypertensionForm from './components/forms/HypertensionForm'; 
-import AppointmentBooking from './components/AppointmentBooking'; // Import Appointment Booking Component
-// Import other disease form components
-// import DiabetesForm from './components/forms/DiabetesForm';
-// import AsthmaForm from './components/forms/AsthmaForm'; // Add other disease forms as needed
+import AppointmentBooking from './components/AppointmentBooking';
 import './App.css';
 
 

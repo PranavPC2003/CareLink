@@ -84,7 +84,8 @@ function NavbarComponent() {
           </Nav.Link>
 
           <Dropdown className="nav-item">
-            <Dropdown.Toggle variant="link" id="clinic-dropdown" className="nav-link text-white">
+            <Dropdown.Toggle variant="link" id="clinic-dropdown" className="nav-link text-white" style={{ paddingBottom: '26px' }}
+            >
               Clinic
             </Dropdown.Toggle>
             <Dropdown.Menu className="dropdown-menu-dark">
@@ -94,7 +95,8 @@ function NavbarComponent() {
           </Dropdown>
 
           <Dropdown className="nav-item">
-            <Dropdown.Toggle variant="link" id="hospitals-dropdown" className="nav-link text-white">
+            <Dropdown.Toggle variant="link" id="hospitals-dropdown" className="nav-link text-white" style={{ paddingBottom: '26px' }}
+            >
               Hospitals
             </Dropdown.Toggle>
             <Dropdown.Menu className="dropdown-menu-dark">
@@ -103,9 +105,8 @@ function NavbarComponent() {
               <Dropdown.Item as={Link} to="/maps">Maps</Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
-
-          {/* FormsDropdown component is now used here */}
-          <FormsDropdown /> 
+        {/* 
+          <FormsDropdown />  */}
 
         </Nav>
 

@@ -19,6 +19,8 @@ class Hospital(models.Model):
     location = models.TextField(max_length=300)
     category = models.CharField(max_length=50)
     logo = models.ImageField(upload_to='hospital_logo/', blank=True, null=True, default='https://w7.pngwing.com/pngs/877/824/png-transparent-icon-hospital-computer-icons-medicine-others-miscellaneous-text-rectangle.png')
+    latitude = models.FloatField(null=True, blank=True)
+    longitude = models.FloatField(null=True, blank=True)
 
     def __str__(self):
         return f"{self.hospital_id}: {self.name}"

@@ -152,3 +152,55 @@ button:hover {
   height: 80vh; /* Adjust height as needed */
   width: 100%;
 }
+
+/* Services and Testimonials Card Styles */
+.service-card,
+.testimonial-card {
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover,
+.testimonial-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Grid Styles for Services and Testimonials */
+.grid {
+  display: grid;
+  gap: 20px;
+}
+
+.grid-cols-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-cols-1 {
+  grid-template-columns: 1fr;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 640px) {
+  .grid-cols-3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Enhance the Page Aesthetics */
+body {
+  font-family: 'Inter', sans-serif;
+  color: #333;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.bg-gradient-to-b {
+  background: linear-gradient(to bottom, #ebf8ff, #fff);
+}
