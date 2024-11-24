@@ -31,7 +31,8 @@ import NavbarComponent from './components/Navbar';
 import HospitalList from './components/HospitalList';
 import LandingPage from './components/LandingPage';
 import Maps from './components/Maps';
-import HypertensionForm from './components/forms/HypertensionForm'; 
+// import HypertensionForm from './components/forms/HypertensionForm'; 
+import PatientForm from './components/PatientForm';
 import AppointmentBooking from './components/AppointmentBooking';
 import './App.css';
 
@@ -53,8 +54,11 @@ function App() {
         
         
         {/* Hypertension Form Route */}
-        <Route path="/forms/HypertensionForm" element={<HypertensionForm />} />
+        {/* <Route path="/forms/HypertensionForm" element={<HypertensionForm />} /> */}
         
+        <Route path="/patient-form" element={<PatientForm />} />
+
+
 
       </Routes>
     </Router>

@@ -136,23 +136,6 @@ button:hover {
 }
 
 /* Styles for cards */
-.service-card,
-.testimonial-card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.service-card:hover,
-.testimonial-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
-
-/* Add this to App.css */
-.leaflet-container {
-  height: 80vh; /* Adjust height as needed */
-  width: 100%;
-}
-
 /* Services and Testimonials Card Styles */
 .service-card,
 .testimonial-card {
@@ -168,24 +151,29 @@ button:hover {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
-/* Grid Styles for Services and Testimonials */
-.grid {
-  display: grid;
+/* Flex Container for Services Section */
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
   gap: 20px;
 }
 
-.grid-cols-3 {
-  grid-template-columns: repeat(3, 1fr);
+/* Service Card Width Adjustments for Different Screen Sizes */
+.service-card {
+  width: 100%;
+  max-width: 300px;
 }
 
-.grid-cols-1 {
-  grid-template-columns: 1fr;
+@media (min-width: 640px) {
+  .service-card {
+    width: 30%; /* Three cards per row */
+  }
 }
 
-/* Responsive Adjustments */
-@media (max-width: 640px) {
-  .grid-cols-3 {
-    grid-template-columns: 1fr;
+@media (min-width: 1024px) {
+  .service-card {
+    width: 20%; /* Five cards per row */
   }
 }
 
@@ -204,3 +192,35 @@ body {
 .bg-gradient-to-b {
   background: linear-gradient(to bottom, #ebf8ff, #fff);
 }
+
+
+/* Grid Styles for Testimonials Section */
+.grid-cols-3 {
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px; /* Reduced the gap between cards */
+}
+
+/* Responsive Adjustments for Testimonials */
+@media (max-width: 640px) {
+  .grid-cols-3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Testimonial Card Styles */
+.testimonial-card {
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-card .content {
+  padding: 10px;
+}
+
