@@ -7,6 +7,11 @@ class HospitalSerializer(serializers.ModelSerializer):
         model = Hospital
         fields = ['hospital_id', 'name', 'description','location', 'category', 'logo', 'latitude', 'longitude'] 
 
+class DoctorSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Doctor
+        fields = ['doctor_id', 'hospital_id', 'first_name', 'last_name', 'middle_name', 'specialty'] 
+
 class AppointmentSerializer(serializers.ModelSerializer):
     class Meta:
         model = Appointment

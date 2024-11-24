@@ -21,7 +21,7 @@ function NavbarComponent() {
               Clinic
             </Dropdown.Toggle>
             <Dropdown.Menu className="dropdown-menu-dark">
-              <Dropdown.Item as={Link} to="#doctor">Doctor</Dropdown.Item>
+              <Dropdown.Item as={Link} to="/clinic/doctor">Doctor</Dropdown.Item>
               <Dropdown.Item as={Link} to="/patient-form">Patients</Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>

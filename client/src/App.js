@@ -34,6 +34,7 @@ import Maps from './components/Maps';
 // import HypertensionForm from './components/forms/HypertensionForm'; 
 import PatientForm from './components/PatientForm';
 import AppointmentBooking from './components/AppointmentBooking';
+import DoctorPatientSummary from './components/DoctorPatientSummary';
 import './App.css';
 
 
@@ -57,6 +58,7 @@ function App() {
         {/* <Route path="/forms/HypertensionForm" element={<HypertensionForm />} /> */}
         
         <Route path="/patient-form" element={<PatientForm />} />
+        <Route path="/clinic/doctor" element={<DoctorPatientSummary />} /> {/* Add this */}
 
 
 

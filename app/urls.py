@@ -6,7 +6,9 @@ from . import views
 
 urlpatterns = [
     path("hospital-view/", views.HospitalListView.as_view(), name="hospital-view"),
+    path("doctor-view/", views.DoctorListView.as_view(), name="doctor-view"),
     path('book-appointment/', views.AppointmentBooking.as_view(), name='appointment-booking'),
+    path('patient-summary-listView/', views.PatientSummaryListView.as_view(), name='patient-summary-listView'),
     path('patient-summary/', views.PatientSummaryView.as_view(), name='patient-summary'),
     path('doctor/signup/', views.DoctorSignupView.as_view(), name='doctor-signup'),
     path('doctor/login/', views.DoctorLoginView.as_view(), name='doctor-login'),

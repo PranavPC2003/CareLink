@@ -3,7 +3,7 @@ from rest_framework import generics, status
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework.permissions import AllowAny
-from .serializers import HospitalSerializer, AppointmentSerializer, DoctorSignupSerializer, DoctorLoginSerializer, PatientIntakeSerializer
+from .serializers import HospitalSerializer, DoctorSerializer, AppointmentSerializer, DoctorSignupSerializer, DoctorLoginSerializer, PatientIntakeSerializer
 from .models import Hospital, Doctor, Appointment, DoctorLogin
 import pathlib, textwrap, json, os, pymongo, bcrypt
 import google.generativeai as genai
@@ -17,6 +17,10 @@ from datetime import datetime, timezone
 class HospitalListView(generics.ListCreateAPIView):
     queryset = Hospital.objects.all()
     serializer_class = HospitalSerializer
+
+class DoctorListView(generics.ListCreateAPIView):
+    queryset = Doctor.objects.all()
+    serializer_class = DoctorSerializer
 
 class AppointmentBooking(generics.ListCreateAPIView):
     queryset = Appointment.objects.all()
@@ -129,3 +133,25 @@ class PatientSummaryView(APIView):
             "Please generate predictions and recommendations based on the patient data provided in valid json format."
         )
         return prompt
+    
+class PatientSummaryListView(APIView):
+    def get(self, request, *args, **kwargs):
+        doctor_id = request.query_params.get("doctor_id")
+        if not doctor_id:
+            return Response({"error": "Doctor ID is required"}, status=status.HTTP_400_BAD_REQUEST)
+        
+        try:
+            client = pymongo.MongoClient("mongodb://localhost:27017/")
+            db = client["careLink"]
+            collection = db["patient_summary"]
+            
+            summaries = list(collection.find({"basic_information.doctor_id": int(doctor_id)}))
+
+            # Convert ObjectId to string and format the response
+            for summary in summaries:
+                summary["_id"] = str(summary["_id"])
+            
+            return Response(summaries, status=status.HTTP_200_OK)
+        
+        except Exception as e:
+            return Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
