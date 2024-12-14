@@ -64,52 +64,46 @@ function DoctorPatientSummary() {
             {expandedSummaryId === summary._id && (
           <div className="summary-details">
             <h3>Basic Information</h3>
-            <p><strong>Gender:</strong> {summary.basic_information?.gender || "N/A"}</p>
-            <p><strong>Contact:</strong> {summary.basic_information?.contact_information || "N/A"}</p>
+            <p><strong>Gender: </strong> {summary.basic_information?.gender || "N/A"}</p>
+            <p><strong>Contact: </strong> {summary.basic_information?.contact_information || "N/A"}</p>
             <p>
-              <strong>Conditions:</strong> 
+              <strong>Conditions: </strong> 
               {summary.basic_information?.existing_conditions?.join(', ') || "None"}
             </p>
-
-            <h3>Symptoms</h3>
-            <p>
-              <strong>Primary Symptoms:</strong> 
-              {summary.symptoms?.primary_symptoms?.join(', ') || "None"}
-            </p>
-            <p><strong>Onset:</strong> {summary.symptoms?.symptom_onset || "N/A"}</p>
-            <p><strong>Pain Level:</strong> {summary.symptoms?.pain_level || "N/A"}</p>
+            <br></br>
 
             <h3>Predicted Diagnosis</h3>
-            <p><strong>Primary:</strong> {summary.predicted_diagnosis?.primary_prediction || "N/A"}</p>
-            <p><strong>Secondary:</strong> {summary.predicted_diagnosis?.secondary_prediction || "N/A"}</p>
+            <p><strong>Primary: </strong> {summary.predicted_diagnosis?.primary_prediction || "N/A"}</p>
+            <p><strong>Secondary: </strong> {summary.predicted_diagnosis?.secondary_prediction || "N/A"}</p>
             <p>
-              <strong>Alternative Considerations:</strong> 
+              <strong>Alternative Considerations: </strong> 
               {summary.predicted_diagnosis?.alternative_considerations?.join(', ') || "None"}
             </p>
+            <br></br>
 
             <h3>Suggested Remedies</h3>
             <p>
-              <strong>Lifestyle Modifications:</strong> 
+              <strong>Lifestyle Modifications: </strong> 
               {summary.suggested_remedies?.lifestyle_modifications?.join(', ') || "None"}
             </p>
             <p>
-              <strong>Medication Suggestions:</strong> 
+              <strong>Medication Suggestions: </strong> 
               {summary.suggested_remedies?.medication_suggestions?.join(', ') || "None"}
             </p>
             <p>
-              <strong>Follow-up Tests:</strong> 
+              <strong>Follow-up Tests: </strong> 
               {summary.suggested_remedies?.followup_tests?.join(', ') || "None"}
             </p>
+            <br></br>
 
             <h3>Additional Notes</h3>
             <p>
-              <strong>Relevant Alerts:</strong> 
+              <strong>Relevant Alerts: </strong> 
               {summary.additional_notes?.relevant_alerts?.join(', ') || "None"}
             </p>
-            <p><strong>Patient Concerns:</strong> {summary.additional_notes?.patient_concerns || "No notes available."}</p>
+            <p><strong>Patient Concerns: </strong> {summary.additional_notes?.patient_concerns || "No notes available."}</p>
           </div>
         )}
-
           </div>
         ))}
       </div>
